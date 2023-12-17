@@ -6,9 +6,9 @@ import java.util.Set;
 public class Solution {
 
     public boolean containsDuplicate(int[] nums) {
-        Set<Integer> integerSet = new HashSet<>();
+        Set<Integer> uniqueNumbers = new HashSet<>();
         for (int num : nums) {
-            if (!integerSet.add(num)) {
+            if (!uniqueNumbers.add(num)) {
                return true;
             }
         }
