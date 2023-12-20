@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-public class Solution {
+public class Solution2 {
 
     private static final String[] KEYPAD = {
             "",     // 0
@@ -45,7 +45,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution lc = new Solution();
+        Solution2 lc = new Solution2();
         String digits = "23";
         List<String> combinations = lc.letterCombinations(digits);
         System.out.println(combinations); // Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
