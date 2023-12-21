@@ -14,3 +14,10 @@
 - [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
 
+### Day 3
+
+- [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+- [1512. Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)
+- [2956. Find Common Elements Between Two Arrays](https://leetcode.com/problems/find-common-elements-between-two-arrays/)
+
+
