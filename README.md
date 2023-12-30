@@ -23,5 +23,11 @@
 ### Optional
 - [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
+  ### Day 4
+
+- [706. Design HashMap](https://leetcode.com/problems/design-hashmap/)
+- [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+- [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
+
 
 
