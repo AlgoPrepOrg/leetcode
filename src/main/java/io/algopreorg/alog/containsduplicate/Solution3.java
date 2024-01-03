@@ -1,13 +1,17 @@
 package io.algopreorg.alog.containsduplicate;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Solution3 {
     public boolean containsDuplicate(int[] nums) {
-        int current = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            if (current == nums[i]) {
-                return false;
+        Set<Integer> uniqueNums = new HashSet<>();
+        for (int num : nums) {
+            if (uniqueNums.contains(num)) {
+                return true;
             }
+            uniqueNums.add(num);
         }
-        return true;
+        return false;
     }
 }
