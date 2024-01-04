@@ -1,0 +1,31 @@
+name: Send Telegram Message on PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create message and file
+        run: |
+          REPO_NAME=$(basename $(pwd))
+          BRANCH_NAME=${{ github.event.pull_request.head.ref }}
+          COMMIT_MESSAGE=${{ github.event.pull_request.title }}
+          MESSAGE="*Repository:* \`$REPO_NAME\`\n*Branch:* \`$BRANCH_NAME\`\n*Pull Request Title:* $COMMIT_MESSAGE"
+          echo "$MESSAGE" > message.md
+
+      - name: Send message to Telegram
+        run: |
+          curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage -d chat_id=$TELEGRAM_CHAT_ID -d parse_mode="MarkdownV2" -d text="[$(date '+%Y-%m-%d %H:%M:%S')] New Pull Request opened..." > response.json
+          MESSAGE_ID=$(jq '.result.message_id' response.json)
+          curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendDocument -d chat_id=$TELEGRAM_CHAT_ID -d document=@message.md -d reply_to_message_id=$MESSAGE_ID > document_response.json
