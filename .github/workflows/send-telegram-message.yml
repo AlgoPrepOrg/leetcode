@@ -20,7 +20,7 @@ jobs:
         run: |
           REPO_NAME=AlgoPrepOrg[leetcode]
           BRANCH_NAME=${{ github.event.pull_request.head.ref }}
-          COMMIT_MESSAGE=${{ github.event.pull_request.title }}
+          COMMIT_MESSAGE="${{ github.event.pull_request.title }}"
           MESSAGE="*Repository:* \`$REPO_NAME\`\n*Branch:* \`$BRANCH_NAME\`\n*Pull Request Title:* $COMMIT_MESSAGE"
           echo "$MESSAGE" > message.md
 
