@@ -15,8 +15,7 @@ jobs:
       - name: Set up Bash
         uses: appleboy/secure-variables-action@v1
         with:
-          TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          --removed--
 
       - name: Create message and file
         run: |
