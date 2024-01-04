@@ -8,15 +8,13 @@ jobs:
   send_message:
     runs-on: ubuntu-latest
 
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Set up Bash
-        uses: appleboy/secure-variables-action@v1
-        with:
-          TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
       - name: Create message and file
         run: |
@@ -28,6 +26,6 @@ jobs:
 
       - name: Send message to Telegram
         run: |
-          curl -s -X POST https://api.telegram.org/bot$TOKEN/sendMessage -d chat_id=$CHAT_ID -d parse_mode="MarkdownV2" -d text="[$(date '+%Y-%m-%d %H:%M:%S')] New Pull Request opened..." > response.json
+          curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage -d chat_id=$TELEGRAM_CHAT_ID -d parse_mode="MarkdownV2" -d text="[$(date '+%Y-%m-%d %H:%M:%S')] New Pull Request opened..." > response.json
           MESSAGE_ID=$(jq '.result.message_id' response.json)
-          curl -s -X POST https://api.telegram.org/bot$TOKEN/sendDocument -d chat_id=$CHAT_ID -d document=@message.md -d reply_to_message_id=$MESSAGE_ID > document_response.json
+          curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendDocument -d chat_id=$TELEGRAM_CHAT_ID -d document=@message.md -d reply_to_message_id=$MESSAGE_ID > document_response.json
