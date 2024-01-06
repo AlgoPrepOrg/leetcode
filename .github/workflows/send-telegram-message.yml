@@ -2,7 +2,7 @@ name: Send Telegram Message on PR
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
 
 jobs:
   send_message:
