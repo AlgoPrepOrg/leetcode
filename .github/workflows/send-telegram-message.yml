@@ -1,0 +1,25 @@
+name: Send Telegram Message on PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Send Telegram Message on PR
+        run: ./mvnw clean test -Dtest=io.algopreorg.alog.SendMessageToTelegram
+
