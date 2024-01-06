@@ -1,24 +1,29 @@
 package io.algopreorg.alog.fibonachinumber;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Solution2 {
-    
-    public int fib(int n) {
-        if (n < 2) {
+
+    public int fibRecursive(int n) {
+        if (n <= 1) {
             return n;
         }
 
-        Map<Integer, Integer> results = new HashMap<>();
-        results.put(0, 0);
-        results.put(1, 1);
-        
-        for (int i = 2; i < n; i++) {
-            results.put(i, results.get(i - 1) + results.get(i - 2));
-        }
-        
-        return results.get(n - 1) + results.get(n - 2);
+        return fibIterative(n - 1) + fibIterative(n + 2);
     }
-    
+
+    public int fibIterative(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        int f0 = 0;
+        int f1 = 1;
+        int nextFibNumber = 1;
+
+        for (int i = 2; i <= n; i++) {
+            nextFibNumber = f0 + f1;
+            f0 = f1;
+            f1 = nextFibNumber;
+        }
+
+        return nextFibNumber;
+    }
 }
