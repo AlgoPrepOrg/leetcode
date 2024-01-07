@@ -13,7 +13,6 @@
 - [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 - [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
-
 ### Day 3
 
 - [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
@@ -29,5 +28,10 @@
 - [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 - [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
+### Day 5
+
+- [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+- [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)
+- [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 
 
