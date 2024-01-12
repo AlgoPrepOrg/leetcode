@@ -1,13 +1,13 @@
 package io.algopreorg.alog.designhashmap;
 
-public class MyHashMap {
+public class MyHashMap1 {
     private static final int DEFAULT_SIZE = 1000;
     private static final float THRESHOLD = 0.75f;
     private Object[] table;
     private int size;
 
 
-    public MyHashMap() {
+    public MyHashMap1() {
         table = new Object[DEFAULT_SIZE];
     }
 
