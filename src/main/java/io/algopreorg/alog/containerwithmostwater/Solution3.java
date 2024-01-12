@@ -1,6 +1,6 @@
 package io.algopreorg.alog.containerwithmostwater;
 
-public class Solution2 {
+public class Solution3 {
     public int maxArea(int[] height) {
         int max = 0;
         int length = height.length;
