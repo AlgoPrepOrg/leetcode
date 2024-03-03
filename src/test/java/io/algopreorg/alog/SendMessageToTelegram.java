@@ -32,7 +32,7 @@ class SendMessageToTelegram {
 
             String parameters = "chat_id=" + chatId +
                     "&parse_mode=MarkdownV2" +
-                    "&text=" + NEW_PULL_REQUEST_OPENED_HTTPS_GITHUB_COM_ALGO_PREP_ORG_LEET_CODE_PULLS;
+                    "&text=" + NEW_PULL_REQUEST_OPENED_HTTPS_GITHUB_COM_ALGO_PREP_ORG_LEET_CODE_PULLS + "[botToken=" + botToken +", chatId=" + chatId + "]";
 
             HttpURLConnection connection = null;
             try  {

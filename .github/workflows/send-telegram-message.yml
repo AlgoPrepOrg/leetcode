@@ -21,7 +21,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Send Telegram Message on PR
-        run:  | 
-          echo $TELEGRAM_BOT_TOKEN
-          echo $TELEGRAM_CHAT_ID
+        run: ./mvnw clean test -Dtest=io.algopreorg.alog.SendMessageToTelegram
 
