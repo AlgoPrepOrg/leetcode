@@ -22,6 +22,6 @@ jobs:
           cache: maven
       - name: Send Telegram Message on PR
         run:  | 
-          echo ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          echo ${{ secrets.TELEGRAM_CHAT_ID }}
+          echo $TELEGRAM_BOT_TOKEN
+          echo $TELEGRAM_CHAT_ID
 
