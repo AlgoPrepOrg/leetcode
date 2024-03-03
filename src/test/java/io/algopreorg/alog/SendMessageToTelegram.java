@@ -26,7 +26,6 @@ class SendMessageToTelegram {
     void sendTelegramMessage() throws Exception {
         String botToken = System.getenv(BOT_TOKEN);
         String chatId = System.getenv(CHAT_ID);
-        System.out.println(botToken + " ->  " + chatId);
 
         if (Objects.nonNull(botToken) && Objects.nonNull(chatId)) {
             String telegramMessageApiUrl = String.format(TELEGRAM_SEND_MESSAGE_API_URL, botToken);
