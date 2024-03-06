@@ -55,9 +55,9 @@
 ## Two Pointers
 
 ### Day 1
-- [217. Contains Duplicate](https://leetcode.com/problems/linked-list-cycle/)
-- [242. Valid Anagram](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
-- [1929. Concatenation of Array](https://leetcode.com/problems/remove-element/description/)
+- [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
+- [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
+- [27. Remove Element](https://leetcode.com/problems/remove-element/description/)
 
 
 
