@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Solution {
+public class Solution1 {
 
     public int lengthOfLongestSubstring(String s) {
         if (s.isEmpty()) {
