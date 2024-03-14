@@ -60,5 +60,10 @@
 - [27. Remove Element](https://leetcode.com/problems/remove-element/description/)
 
 
+### Day 2
+- [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+- [167. Two Sum II - Input Array Is Sorted]([https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted))
+- [15. 3Sum](https://leetcode.com/problems/3sum)
+
 
 
