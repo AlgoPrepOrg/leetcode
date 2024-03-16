@@ -13,7 +13,6 @@ public class Solution {
             }
         }
 
-        System.out.println(Arrays.toString(nums));
         return addIndex;
     }
 
