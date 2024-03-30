@@ -65,5 +65,11 @@
 - [167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted)
 - [15. 3Sum](https://leetcode.com/problems/3sum)
 
+### Day 3
+- [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+- [61. Rotate List](https://leetcode.com/problems/rotate-list)
+- [202. Happy Number](https://leetcode.com/problems/happy-number)
+- [1877. Minimize Maximum Pair Sum in Array](https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/)
+
 
 
