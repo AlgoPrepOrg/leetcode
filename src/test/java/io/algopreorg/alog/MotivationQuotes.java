@@ -105,7 +105,7 @@ public class MotivationQuotes {
             "The only limit to our realization of tomorrow will be our doubts of today(Franklin D. Roosevelt)",
             "The best time to plant a tree was 20 years ago. The second best time is now(Chinese Proverb)",
             "If you want to achieve greatness stop asking for permission(Anonymous)",
-            "What you do today can improve all your tomorrows(Ralph Marston"
+            "What you do today can improve all your tomorrows(Ralph Marston)"
     );
 
     public String getRandomQuote() {
