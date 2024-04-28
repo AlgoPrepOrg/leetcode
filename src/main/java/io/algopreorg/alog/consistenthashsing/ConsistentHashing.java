@@ -44,7 +44,7 @@ public class ConsistentHashing {
     public static void main(String[] args) {
         List<String> nodes = Arrays.asList("Node1", "Node2", "Node3");
 
-        HashFunction sha256HashFunction = new Sha256HashFunction();
+        HashFunction sha256HashFunction = new MD5HashFunction();
         ConsistentHashing ch = new ConsistentHashing(3, nodes, sha256HashFunction);
 
         System.out.println("Key1 belongs to node: " + ch.getNodeForKey("Key1"));

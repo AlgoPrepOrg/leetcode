@@ -4,13 +4,13 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class Sha256HashFunction implements HashFunction {
-    public static final String SHA_256 = "SHA-256";
+public class MD5HashFunction implements HashFunction {
+    public static final String MD_5 = "MD5";
 
     @Override
     public int hash(String key) {
         try {
-            var md = MessageDigest.getInstance(SHA_256);
+            var md = MessageDigest.getInstance(MD_5);
             byte[] hashBytes = md.digest(key.getBytes());
             return bytesToInt(hashBytes);
         } catch (NoSuchAlgorithmException e) {
