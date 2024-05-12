@@ -71,5 +71,15 @@
 - [202. Happy Number](https://leetcode.com/problems/happy-number)
 - [1877. Minimize Maximum Pair Sum in Array](https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/)
 
+## Sliding Window
+
+### Day 1
+
+- [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+- [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/description/)
+- [1343. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold](https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/)
+
+
+
 
 
