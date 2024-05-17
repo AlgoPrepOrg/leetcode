@@ -2,6 +2,7 @@ package io.algopreorg.alog.slicingwindow.besttimetobuyandsellstock;
 
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
+
 public class Solution {
     public int maxProfit(int[] prices) {
         if (prices.length == 0) {
