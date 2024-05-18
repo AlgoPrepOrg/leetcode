@@ -79,7 +79,10 @@
 - [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/description/)
 - [1343. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold](https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/)
 
+### Day 2
 
-
+- [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+- [424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/description/)
+- [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/description/)
 
 
