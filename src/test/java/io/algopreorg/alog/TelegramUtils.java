@@ -15,11 +15,9 @@ public class TelegramUtils {
         if (Objects.nonNull(botToken) && Objects.nonNull(chatId)) {
             String telegramMessageApiUrl = String.format(TELEGRAM_SEND_MESSAGE_API_URL, botToken);
 
-            text = escapeString(text);
-
             String parameters = "chat_id=" + chatId +
                     "&parse_mode=MarkdownV2" +
-                    "&text=" + text;
+                    "&text=" + escapeTextForMarkdown(text);
 
 
             HttpClient.sendMessage(telegramMessageApiUrl, POST, CONTENT_TYPE, APPLICATION_X_WWW_FORM_URLENCODED, parameters);
@@ -28,36 +26,29 @@ public class TelegramUtils {
         }
     }
 
-    public static String escapeString(String input) {
+    private static String escapeTextForMarkdown(String text) {
         StringBuilder escapedString = new StringBuilder();
-        for (char c : input.toCharArray()) {
+        for (char c : text.toCharArray()) {
             switch (c) {
-                case '\"':
-                    escapedString.append("\\\"");
-                    break;
-                case '\\':
-                    escapedString.append("\\\\");
-                    break;
-                case '\b':
-                    escapedString.append("\\b");
-                    break;
-                case '\f':
-                    escapedString.append("\\f");
-                    break;
-                case '\n':
-                    escapedString.append("\\n");
-                    break;
-                case '\r':
-                    escapedString.append("\\r");
-                    break;
-                case '\t':
-                    escapedString.append("\\t");
-                    break;
+                case '_':
+                case '*':
+                case '[':
+                case ']':
                 case '(':
-                    escapedString.append("\\(");
-                    break;
                 case ')':
-                    escapedString.append("\\)");
+                case '~':
+                case '`':
+                case '>':
+                case '#':
+                case '+':
+                case '-':
+                case '=':
+                case '|':
+                case '{':
+                case '}':
+                case '.':
+                case '!':
+                    escapedString.append('\\').append(c);
                     break;
                 default:
                     escapedString.append(c);
