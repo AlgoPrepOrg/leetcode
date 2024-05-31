@@ -1,4 +1,4 @@
-package io.algopreorg.alog.removeElement;
+package io.algopreorg.alog.removeelement;
 
 public class SolutionVitalii {
 

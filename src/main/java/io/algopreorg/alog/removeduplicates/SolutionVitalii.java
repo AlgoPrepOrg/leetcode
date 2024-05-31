@@ -1,4 +1,4 @@
-package io.algopreorg.alog.removeDuplicates;
+package io.algopreorg.alog.removeduplicates;
 
 public class SolutionVitalii {
 
