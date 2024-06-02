@@ -85,4 +85,10 @@
 - [424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/description/)
 - [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/description/)
 
+### Day 3
+
+- [Find K Closest Elements](https://leetcode.com/problems/find-k-closest-elements/description/)
+- [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/description/)
+- [Minimum Operations to Reduce X to Zero](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/)
+
 
