@@ -1,5 +1,11 @@
 # Algo Getting Started
 
+Пишу про алгоритми, системний дизайн та інші цікаві теми в [Telegram](https://t.me/+cbu174jYR0s4OWFi). Якщо це вас цікавить — приєднуйтесь!
+
+
+Також запрошую до нашої спільноти в [Discord community](https://discord.gg/ZH8nRbjN), де будемо обговорювати й ділитися ідеями. Долучайтесь, якщо маєте бажання!
+
+
 ## Big-O complexities of general algorithms.
 
 <img width="813" alt="Big-O Complexity Chart" src="https://github.com/AlgoPrepOrg/leetcode/assets/73576438/2a9ebda5-e60c-459a-8f3b-720b3514ebb1">
