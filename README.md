@@ -114,4 +114,32 @@
 - [456. 132 Pattern](https://leetcode.com/problems/132-pattern/description/)
 - [341. Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/description/)
 
+### Binary Search
+
+- [Binary Search](https://neetcode.io/problems/binary-search)
+- [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/description/)
+- [374. Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/description/)
+- [441. Arranging Coins](https://leetcode.com/problems/arranging-coins/description/)
+- [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/description/)
+- [367. Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/description/)
+- [69. Sqrt(x)](https://leetcode.com/problems/sqrtx/description/)
+- [540. Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/description/)
+- [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/)
+- [162. Find Peak Element](https://leetcode.com/problems/find-peak-element/description/)
+- [2300. Successful Pairs of Spells and Potions](https://leetcode.com/problems/successful-pairs-of-spells-and-potions/description/)
+- [Search 2D Matrix](https://neetcode.io/problems/search-2d-matrix)
+
+### Linked List
+
+- [Reverse a Linked List](https://neetcode.io/problems/reverse-a-linked-list)
+- [Merge Two Sorted Linked Lists](https://neetcode.io/problems/merge-two-sorted-linked-lists)
+- [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
+- [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/description/)
+- [83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/)
+- [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/description/)
+- [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
+- [1669. Merge In Between Linked Lists](https://leetcode.com/problems/merge-in-between-linked-lists/description/)
+- [2487. Remove Nodes From Linked List](https://leetcode.com/problems/remove-nodes-from-linked-list/description/)
+- [Reorder Linked List](https://neetcode.io/problems/reorder-linked-list)
+
 
