@@ -91,4 +91,27 @@
 - [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/description/)
 - [Minimum Operations to Reduce X to Zero](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/)
 
+### Stack 
+
+- [Validate Parentheses](https://neetcode.io/problems/validate-parentheses)
+- [682. Baseball Game](https://leetcode.com/problems/baseball-game/description/)
+- [225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/description/)
+- [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/description/)
+- [1544. Make The String Great](https://leetcode.com/problems/make-the-string-great/description/)
+- [Minimum Stack](https://neetcode.io/problems/minimum-stack)
+- [Evaluate Reverse Polish Notation](https://neetcode.io/problems/evaluate-reverse-polish-notation)
+- [2390. Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/description/)
+- [946. Validate Stack Sequences](https://leetcode.com/problems/validate-stack-sequences/description/)
+- [Generate Parentheses](https://neetcode.io/problems/generate-parentheses)
+- [735. Asteroid Collision](https://leetcode.com/problems/asteroid-collision/description/)
+- [Daily Temperatures](https://neetcode.io/problems/daily-temperatures)
+- [901. Online Stock Span](https://leetcode.com/problems/online-stock-span/description/)
+- [Car Fleet](https://neetcode.io/problems/car-fleet)
+- [71. Simplify Path](https://leetcode.com/problems/simplify-path/description/)
+- [394. Decode String](https://leetcode.com/problems/decode-string/)
+- [402. Remove K Digits](https://leetcode.com/problems/remove-k-digits/description/)
+- [1209. Remove All Adjacent Duplicates in String II](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/description/)
+- [456. 132 Pattern](https://leetcode.com/problems/132-pattern/description/)
+- [341. Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/description/)
+
 
