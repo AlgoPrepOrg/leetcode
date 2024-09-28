@@ -147,5 +147,8 @@
 - [1669. Merge In Between Linked Lists](https://leetcode.com/problems/merge-in-between-linked-lists/description/)
 - [2487. Remove Nodes From Linked List](https://leetcode.com/problems/remove-nodes-from-linked-list/description/)
 - [Reorder Linked List](https://neetcode.io/problems/reorder-linked-list)
+- [2130. Maximum Twin Sum of a Linked List](https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/)
+- [1721. Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/)
+- [707. Design Linked List](https://leetcode.com/problems/design-linked-list/description/)
 
 
