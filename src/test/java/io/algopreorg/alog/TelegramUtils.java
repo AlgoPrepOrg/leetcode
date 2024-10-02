@@ -17,7 +17,7 @@ public class TelegramUtils {
 
             String parameters = "chat_id=" + chatId +
                     "&parse_mode=MarkdownV2" +
-                    "&text=" + text;
+                    "&text=" + escapeTextForMarkdown(text);
 
 
             HttpClient.sendMessage(telegramMessageApiUrl, POST, CONTENT_TYPE, APPLICATION_X_WWW_FORM_URLENCODED, parameters);
@@ -25,4 +25,37 @@ public class TelegramUtils {
             System.out.println("Skip sendMessage to telegram  botToken & chatId is null.");
         }
     }
+
+    private static String escapeTextForMarkdown(String text) {
+        StringBuilder escapedString = new StringBuilder();
+        for (char c : text.toCharArray()) {
+            switch (c) {
+                case '_':
+                case '*':
+                case '[':
+                case ']':
+                case '(':
+                case ')':
+                case '~':
+                case '`':
+                case '>':
+                case '#':
+                case '+':
+                case '-':
+                case '=':
+                case '|':
+                case '{':
+                case '}':
+                case '.':
+                case '!':
+                    escapedString.append('\\').append(c);
+                    break;
+                default:
+                    escapedString.append(c);
+                    break;
+            }
+        }
+        return escapedString.toString();
+    }
+
 }

@@ -1,9 +1,6 @@
 package io.algopreorg.alog;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -37,15 +34,15 @@ public class HttpClient {
         int responseCode = connection.getResponseCode();
 
         if (responseCode == HttpURLConnection.HTTP_OK) {
-            System.out.println("Message sent successfully. Response: " + extractedResponse(connection));
+            System.out.println("Message sent successfully. Response: " + extractedResponse(connection.getInputStream()));
             return;
         }
 
-        System.out.println("Failed to send message. Response code: " + responseCode);
+        System.out.println("Failed to send message. Response code: " + responseCode + " message " + extractedResponse(connection.getErrorStream()));
     }
 
-    private static String extractedResponse(HttpURLConnection connection) throws IOException {
-        try (var reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+    private static String extractedResponse(InputStream inputStream) throws IOException {
+        try (var reader = new BufferedReader(new InputStreamReader(inputStream))) {
             return reader.lines()
                     .reduce(new StringBuilder(), StringBuilder::append, StringBuilder::append)
                     .toString();
