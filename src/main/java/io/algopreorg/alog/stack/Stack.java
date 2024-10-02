@@ -68,7 +68,7 @@ public class Stack {
    * @return true if the stack is empty, false otherwise
    */
   public boolean isEmpty() {
-    return (top == -1);
+    return top == -1;
   }
 
   /**
@@ -77,7 +77,7 @@ public class Stack {
    * @return true if the stack is full, false otherwise
    */
   public boolean isFull() {
-    return (top == maxSize - 1);
+    return top == maxSize - 1;
   }
 
   /**
