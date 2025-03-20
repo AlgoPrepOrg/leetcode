@@ -26,6 +26,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
+          DIFF_CONTENT=$(cat pr_diff.txt | jq -Rs .)  # Read and format as JSON string
           RESPONSE=$(curl -X POST "https://api.openai.com/v1/chat/completions" \
             -H "Authorization: Bearer $OPENAI_API_KEY" \
             -H "Content-Type: application/json" \
@@ -33,10 +34,18 @@ jobs:
               "model": "gpt-4o-mini",
               "messages": [
                 {"role": "system", "content": "You are an expert AI code reviewer specialized in reviewing Java with Quarkus backend or React frontend code. Provide structured, concise, and actionable feedback following GitHub Flow best practices. Consider Java-specific conventions, Quarkus optimizations, and React performance improvements."},
-                {"role": "user", "content": "Analyze the following code diff and provide review comments:\n"$(cat pr_diff.txt)""}
+                {"role": "user", "content": "Analyze the following code diff and provide review comments:\n"'"$DIFF_CONTENT"'"}
               ]
             }')
-          echo "AI_REVIEW_COMMENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')" >> $GITHUB_ENV
+          echo "API Response: $RESPONSE"  # Debugging Line
+          AI_REVIEW_COMMENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
+
+          if [[ "$AI_REVIEW_COMMENT" == "null" || -z "$AI_REVIEW_COMMENT" ]]; then
+            echo "AI Review Comment is null or empty. Check API response format."
+            exit 1
+          fi
+
+          echo "AI_REVIEW_COMMENT=$AI_REVIEW_COMMENT" >> $GITHUB_ENV
 
       - name: Post AI Review Comment
         uses: mshick/add-pr-comment@v2
