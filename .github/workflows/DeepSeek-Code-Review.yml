@@ -64,10 +64,15 @@ jobs:
           SANITIZED_COMMENT=$(echo "$AI_REVIEW_COMMENT" | sed 's/^[#*]\+ //g' | tr -d '\r' | tr '\n' ' ')
           
           echo "SANITIZED_COMMENT=$SANITIZED_COMMENT" >> $GITHUB_ENV
+          
+          # Preserve formatting with EOF block
+          echo "FORMATTED_COMMENT<<EOF" >> $GITHUB_ENV
+          echo "$SANITIZED_COMMENT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: Post AI Review Comment
         uses: mshick/add-pr-comment@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          message: "${{ env.SANITIZED_COMMENT }}"
+          message: "${{ env.FORMATTED_COMMENT }}"
           allow-repeats: false
