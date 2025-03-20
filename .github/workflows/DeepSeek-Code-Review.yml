@@ -59,12 +59,15 @@ jobs:
             echo "AI Review Comment is null or empty. Check API response format."
             exit 1
           fi
-
-          echo "AI_REVIEW_COMMENT=$AI_REVIEW_COMMENT" >> $GITHUB_ENV
+          
+          # Remove problematic characters from AI response
+          SANITIZED_COMMENT=$(echo "$AI_REVIEW_COMMENT" | sed 's/^[#*]\+ //g' | tr -d '\r' | tr '\n' ' ')
+          
+          echo "SANITIZED_COMMENT=$SANITIZED_COMMENT" >> $GITHUB_ENV
 
       - name: Post AI Review Comment
         uses: mshick/add-pr-comment@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          message: "${{ env.AI_REVIEW_COMMENT }}"
+          message: "${{ env.SANITIZED_COMMENT }}"
           allow-repeats: false
