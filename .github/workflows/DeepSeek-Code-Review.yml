@@ -35,11 +35,11 @@ jobs:
             messages: [
               {
                 role: "system",
-                content: "You are an expert AI code reviewer specialized in reviewing Java with Quarkus backend or React frontend code. Provide structured, concise, and actionable feedback following GitHub Flow best practices. Consider Java-specific conventions, Quarkus optimizations, and React performance improvements."
+                content: "You are an expert AI code reviewer specialized in reviewing Java with Quarkus backend or React frontend code. Provide structured, concise, and actionable feedback following GitHub Flow best practices. Consider Java-specific conventions, Quarkus optimizations, and React performance improvements. Format responses using GitHub-supported Markdown for clarity."
               },
               {
                 role: "user",
-                content: "Analyze the following code diff and provide review comments:\n\n\($diff)"
+                content: "Analyze the following code diff and provide a structured, formatted review comment in Markdown with sections, bullet points, and code blocks where necessary. Ensure readability in GitHub PR comments.\n\n\($diff)"
               }
             ]
           }')
@@ -60,14 +60,9 @@ jobs:
             exit 1
           fi
           
-          # Remove problematic characters from AI response
-          SANITIZED_COMMENT=$(echo "$AI_REVIEW_COMMENT" | sed 's/^[#*]\+ //g' | tr -d '\r' | tr '\n' ' ')
-          
-          echo "SANITIZED_COMMENT=$SANITIZED_COMMENT" >> $GITHUB_ENV
-          
-          # Preserve formatting with EOF block
+          # Preserve Markdown formatting
           echo "FORMATTED_COMMENT<<EOF" >> $GITHUB_ENV
-          echo "$SANITIZED_COMMENT" >> $GITHUB_ENV
+          echo "$AI_REVIEW_COMMENT" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
       - name: Post AI Review Comment
