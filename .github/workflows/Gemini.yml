@@ -1,0 +1,73 @@
+name: AI PR Commenter
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  analyze_pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Get PR Diff
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+          git diff origin/${{ github.event.pull_request.base.ref }} > pr_diff.txt
+
+      - name: Generate AI Review Comments
+        id: ai_review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          # Read and properly format diff content
+          DIFF_CONTENT=$(jq -Rs . < pr_diff.txt)
+
+          # Construct Gemini JSON payload
+          JSON_PAYLOAD=$(jq -n --arg diff "$DIFF_CONTENT" '{
+            contents: [
+              {
+                parts: [
+                  {
+                    text: "You are an expert AI code reviewer specialized in reviewing Java with Quarkus backend or React frontend code. Provide structured, concise, and actionable feedback following GitHub Flow best practices. Format the response in Markdown.\n\nAnalyze the following code diff and provide a structured, formatted review comment in Markdown with sections, bullet points, and code blocks where necessary.\n\n"
+                  },
+                  {
+                    text: $diff
+                  }
+                ]
+              }
+            ]
+          }')
+
+          # Call Gemini API
+          RESPONSE=$(curl -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=$GEMINI_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$JSON_PAYLOAD")
+
+          echo "API Response: $RESPONSE"  # Debugging Line
+
+          # Extract AI-generated comment
+          AI_REVIEW_COMMENT=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text')
+
+          if [[ "$AI_REVIEW_COMMENT" == "null" || -z "$AI_REVIEW_COMMENT" ]]; then
+            echo "AI Review Comment is null or empty. Check API response format."
+            exit 1
+          fi
+
+          # Preserve Markdown formatting
+          echo "FORMATTED_COMMENT<<EOF" >> $GITHUB_ENV
+          echo "$AI_REVIEW_COMMENT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Post AI Review Comment
+        uses: mshick/add-pr-comment@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: "${{ env.FORMATTED_COMMENT }}"
+          allow-repeats: false
